@@ -21,6 +21,25 @@ This method is a brute force method, testing all possible subarrays by using 2
 nested loops.
 =end
 
+
+def max_seq(arr)
+  max_so_far = 0
+  max_current = 0
+  arr.map do |x|
+    max_current = [x, max_current + x].max
+    max_so_far = [max_current, max_so_far].max
+  end
+
+  max_so_far
+end
+
+print max_seq([-2, 1, -3, 4, -1, 2, 1, -5, 4])
+
+
+
+
+
+
 def max_sequence(arr)
   max = 0
   len = arr.length #9
