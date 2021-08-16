@@ -34,3 +34,10 @@ def count_positives_sum_negatives(lst)
   end
   lst.empty? ? [] : arr
 end
+
+# best solution
+
+def count_positives_sum_negatives(lst)
+  return [] if lst.nil? || lst.empty?
+  [lst.count(&:positive?), lst.select(&:negative?).reduce(0, :+)]
+end
